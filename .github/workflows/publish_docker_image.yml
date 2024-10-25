@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker Image
-        run: docker build -t spid-oidc-check-rp .
+        run: docker build -t tirasa/spid-oidc-check-rp:latest .
 
       - name: Push Docker Image
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin && docker push tirasa/spid-oidc-check-rp:latest
